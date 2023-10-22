@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 
 const dbConnection = async () => {
     try {
-        const client = await new MongoClient('https://magenta-rose-frog-suit.cyclic.app').connect();
+        const client = await new MongoClient('process.env.DB_PROD').connect();
         const db = client.db('week-17');
         
         const booksCollection = db.collection('Books');
