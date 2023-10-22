@@ -18,4 +18,4 @@ app.listen(server_port, () => {
  console.log(`Running on port http://localhost:${server_port}`);
 })
 
-exports.fadliweek_17 = functions.https.onRequest(app);
+exports.fadli_week_17 = functions.https.onRequest(app);
