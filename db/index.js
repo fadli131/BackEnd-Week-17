@@ -3,10 +3,12 @@ const dotenv = require("dotenv");
 
 const dbConnection = async () => {
     try {
-        const client = await MongoClient.connect(process.env.DB_PROD, { useUnifiedTopology: true });
+        const client = await new MongoClient(process.env.DB_PROD).connect();
         const db = client.db('week-17');
+        
         const booksCollection = db.collection('Books');
-        const usersCollection = db.collection('Users');
+        const usersCollection = db.collection('Users'); 
+        
         return { db, booksCollection, usersCollection };
     } catch (error) {
         console.log(error, "<=================== error ==================");
