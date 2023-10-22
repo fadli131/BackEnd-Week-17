@@ -1,4 +1,5 @@
 const { MongoClient } = require('mongodb');
+const dotenv = require("dotenv");
 
 const dbConnection = async () => {
     try {
@@ -12,3 +13,5 @@ const dbConnection = async () => {
         throw new Error("Database connection error");
     }
 }
+
+module.exports = dbConnection;
